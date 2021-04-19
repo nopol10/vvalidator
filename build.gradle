@@ -1,4 +1,5 @@
 apply from: rootProject.file("gradle/versions_plugin_config.gradle")
+apply plugin: 'java'
 
 buildscript {
   apply from: rootProject.file("dependencies.gradle")
@@ -6,6 +7,7 @@ buildscript {
   repositories {
     google()
     jcenter()
+    mavenCentral()
   }
 
   dependencies {
@@ -14,6 +16,7 @@ buildscript {
     classpath deps.gradle_plugins.kotlin
     classpath deps.gradle_plugins.spotless
     classpath deps.gradle_plugins.versions
+    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.4.0'
   }
 }
 
@@ -34,3 +37,5 @@ subprojects {
     }
   }
 }
+
+apply plugin: "com.vanniktech.maven.publish"
