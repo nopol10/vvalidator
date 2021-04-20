@@ -1,5 +1,6 @@
 apply from: rootProject.file("gradle/versions_plugin_config.gradle")
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 buildscript {
   ext.kotlin_version = '1.4.31'
@@ -30,6 +31,7 @@ allprojects {
 }
 
 subprojects {
+  apply plugin: 'maven'
   tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
       freeCompilerArgs += [

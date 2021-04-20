@@ -2,3 +2,20 @@ apply plugin: "com.android.library"
 
 apply from: rootProject.file("gradle/android_common_config.gradle")
 //apply from: rootProject.file("gradle/android_bintray_config.gradle")
+
+afterEvaluate {
+  publishing {
+    publications {
+      // Creates a Maven publication called "release".
+      release(MavenPublication) {
+        // Applies the component for the release build variant.
+        from components.release
+
+        // You can then customize attributes of the publication as shown below.
+        groupId = 'com.nopol10.vvalidator'
+        artifactId = 'vvalidator'
+        version = '0.5.6'
+      }
+    }
+  }
+}
