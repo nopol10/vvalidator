@@ -5,6 +5,9 @@ apply from: rootProject.file("gradle/spotless_plugin_config.gradle")
 apply from: rootProject.file("library_info.gradle")
 ext.module_package_id = "${library.publish_group}.${module_name}"
 
+group = 'com.nopol10.vvalidator'
+version = '0.5.6'
+
 android {
   compileSdkVersion library.compile_sdk
   buildToolsVersion versions.build_tools
@@ -19,6 +22,10 @@ android {
     targetSdkVersion library.compile_sdk
     versionCode library.publish_version_code
     versionName library.publish_version
+  }
+
+  kotlinOptions {
+    jvmTarget = '1.8'
   }
 
   sourceSets {

@@ -1,6 +1,6 @@
 ext.module_name = "vvalidator"
 apply from: rootProject.file("gradle/android_library_config.gradle")
-apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
 dependencies {
   implementation deps.androidx.annotations
