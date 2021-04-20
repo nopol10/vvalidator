@@ -1,1 +1,3 @@
-<manifest package="com.nopol10.vvalidator"/>
+<manifest package="com.nopol10.vvalidator">
+  <application />
+</manifest>
